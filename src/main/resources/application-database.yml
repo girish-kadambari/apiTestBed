@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/api_bed_test?useSSL=false
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      connection:
+        autoReconnect: true
+        autoReconnectForPools: true
+        characterEncoding: utf-8
+        is-connection-validation-required: true
+        useUnicode: true
+      hibernate:
+        cache:
+          use_query_cache: false
+          use_second_level_cache: false
+        connection:
+          CharSet: utf-8
+          characterEncoding: utf8
+          useUnicode: true
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        dialect.storage_engine: innodb
+        format_sql: true
+        temp:
+          use_jdbc_metadata_defaults: false
+        type: trace
+        use_sql_comments: false
+      javax:
+        persistence:
+          sharedCache:
+            mode: NONE
+    show-sql: false

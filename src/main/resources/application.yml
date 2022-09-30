@@ -1,0 +1,44 @@
+jwt_secret : 43a498996c3236da206f53d5ea010684
+username: test
+password: test123
+api_auth:
+  key: APIKey
+  value: 1234567890-testsigma
+
+server:
+  port: 8086
+  forward-headers-strategy: framework
+  requests:
+    body:
+      log: true
+  servlet:
+    session:
+      timeout: 1440m
+application:
+  title: API_BED
+  version: 1.0.0
+spring:
+  jpa:
+    open-in-view: false
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always
+  profiles:
+    include: database
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 328578204020-4tbtod1kc5vfuh8i6qg09qnjnv6rm4t0.apps.googleusercontent.com
+            client-secret: Q_3KECptduXsVsWM4EAGYwc4
+
+session:
+  cookie_name: X-TS-API-BED-AUTH
+  is_secure: false
+  is_http_only: true
+
